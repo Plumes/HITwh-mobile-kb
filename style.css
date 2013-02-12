@@ -1,0 +1,128 @@
+body,ul,li,form,img,.nopad{
+	margin:0;padding:0;border:0;
+
+	font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti !important;
+}
+input,textarea,select,option{font-size:100%;}
+
+.ctrtext{
+	text-align: center;
+}
+.getinfo {
+	width: 300px;
+	max-height: 500px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom: auto;
+	margin-top: 40px;
+	font-size: 20px;
+	background-color: #fff;
+	border: 3px;
+	border-radius: 4px;
+	overflow: hidden;
+	padding: 20px 0px 20px 0px;
+}
+.getinfo form {
+	margin-left: auto;
+	margin-right: auto;
+	line-height:  30px;
+	width: 200px;
+	background-color: #fff;
+} 
+.getinfo form input{
+	width: 98%;
+	border-radius: 3px;
+	font-size: 22px;
+	margin-bottom: 10px;
+	width: 200px;
+}
+
+.getinfo .bbtn{
+
+	font-size:20px;
+
+	margin-top:8px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	width:200px;
+	background-color: #0099b9;
+	color:#fff;
+	border: 4px;
+	border-radius: 3px;
+}
+
+.getinfo .rbtn{
+	font-size:20px;
+	margin-top:8px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	width:200px;
+	background-color: #f24537;
+	color:#fff;
+	border: 4px;
+	border-radius: 3px;
+
+
+}
+.classlist li {
+	position: relative;
+	margin:0px auto;   
+	padding-top: 12px;
+	padding-left: 6px;
+	width: 90%;
+	height: 60px;
+	overflow: hidden;
+	margin-bottom: 10px;
+	border-radius: 3px;
+	background: #eee;
+}
+.classlist li .cname {
+	line-height: 0px;
+	padding-top: 0px;
+	font-size: 16px;
+}
+.classlist li .room {
+	padding-top: 0px; 
+	line-height: 0px;
+	font-size: 14px;
+	color:#222;
+}
+.classlist li .corder {
+	position: absolute;
+	font-size: 30px;
+	font-style: italic; 
+	right: 20px;
+	top: 10px;
+	z-index: 0;
+
+}
+t{
+	color: #0099b9;
+}
+.ft {
+	margin-left: 5%;
+	padding-left: 6px;
+}
+
+.weektitle {
+	line-height: 41px;
+	text-align: center;
+	color: #000; 
+	text-shadow: 0px 1px 0px #ddd;
+	background:url(bar.png) repeat-x;
+}
+.daytitle {
+	margin:0px auto;
+	line-height: 40px;
+	width: 90%;
+}
+.dtleft {
+	margin-left: 6px;
+	font-size: 18px;
+}
+.dtright {
+	position:absolute;
+ 	right:5%;
+	font-size: 15px;
+	color: #555;
+}
