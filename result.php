@@ -7,8 +7,11 @@ if ($_SESSION['uid'] =="")
 	//echo "*".$_SESSION['uid'];
 	header("Location: $url");
 }
-$dayno= $_GET['dayno'];
-$weekno= $_GET['weekno'];
+$dayno =0;
+$weekno =0;
+$dayno= (int)$_GET['dayno'];
+$weekno= (int)$_GET['weekno'];
+
 if($dayno=="" || $weekno=="")
 {
 	$url="query.php";
@@ -144,8 +147,39 @@ for (;$index <=5; $index++)
     echo "\n\t</li>\n";
 }
 echo "</div>";
+echo "<div class='daytitle'>\n";
+echo "<button onclick='prev()' class='dtleft_b'>前一天</button>";
+echo "<button font-size='16px' onclick='next()' class='dtright_b'>后一天</button><br />";
+echo "</div>";
 echo "<a class='ft'>现在是: ". date('Y-m-d H:i') ."</a>\n";
+
 
 ?>
 </body>
+<script>
+var dno = <?php echo $dayno; ?>;
+var wno = <?php echo $weekno; ?>;
+function prev()
+{
+	dno = dno % 7;
+	dno = dno -1;
+	if(dno<1) 
+	{
+		dno =dno+7;
+		wno = wno -1;
+	}
+	location.href = "result.php?weekno="+String(wno)+"&dayno="+String(dno);
+}
+function next()
+{
+	dno = dno % 7;
+	dno = dno +1;
+	if(dno==1) 
+	{
+		
+		wno = wno +1;
+	}
+	location.href = "result.php?weekno="+String(wno)+"&dayno="+String(dno);
+}
+</script>
 </html>

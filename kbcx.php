@@ -11,19 +11,13 @@
 date_default_timezone_set('Asia/Shanghai');  
 $dayname = array("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday");
 $ctime = array("08:00~09:45","10:05~11:50","14:00~15:45","16:05~17:50","18:20~19:30");
-$bj = $_GET[bj];
+$bj = $_GET['bj'];
 $bj = substr($bj,0,5)."01";
-$dayno = "NULL";
-$weekno ="NULL";
-$dayno= $_GET[dayno];
-$weekno= $_GET[weekno];
-$con = mysql_connect("localhost","root","123456qwe");
-if (!$con)
-{
-    die('Could not connect: ' . mysql_error());
-}
-mysql_select_db("kb",$con);
-mysql_query("SET NAMES 'utf8'");
+$dayno =0;
+$weekno =0;
+$dayno= (int)$_GET['dayno'];
+$weekno= (int)$_GET['weekno'];
+require("consql.php");
 $sql = "SELECT cname,teacher,room,corder,sweek,eweek FROM kb "
 	."where cno=$bj and weekday=$dayno "
 	."and sweek<=$weekno and eweek>=$weekno";
@@ -97,7 +91,37 @@ for (;$index <=5; $index++)
     echo "\n\t</li>\n";
 }
 echo "</div>";
+echo "<div class='daytitle'>\n";
+echo "<button onclick='prev()' class='dtleft_b'>前一天</button>";
+echo "<button font-size='16px' onclick='next()' class='dtright_b'>后一天</button><br />";
+echo "</div>";
 echo "<a class='ft'>现在是: ". date('Y-m-d H:i') ."</a>\n";
 ?> 
 </body>
+<script>
+var dno = <?php echo $dayno; ?>;
+var wno = <?php echo $weekno; ?>;
+function prev()
+{
+    dno = dno % 7;
+    dno = dno -1;
+    if(dno<1) 
+    {
+        dno =dno+7;
+        wno = wno -1;
+    }
+    location.href = "result.php?weekno="+String(wno)+"&dayno="+String(dno);
+}
+function next()
+{
+    dno = dno % 7;
+    dno = dno +1;
+    if(dno==1) 
+    {
+        
+        wno = wno +1;
+    }
+    location.href = "result.php?weekno="+String(wno)+"&dayno="+String(dno);
+}
+</script>
 </html>
