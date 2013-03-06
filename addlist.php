@@ -8,13 +8,14 @@ if ($_SESSION['uid'] =="") {
 
 $uid = $_SESSION['uid'];
 //echo $uid;
-$con = mysql_connect("localhost","root","123456qwe");
+/*$con = mysql_connect("localhost","root","123456qwe");
 if (!$con)
 {
     die('Could not connect: ' . mysql_error());
 }
 mysql_select_db("mkb",$con);
-mysql_query("SET NAMES 'utf8'");
+mysql_query("SET NAMES 'utf8'");*/
+require("consql.php");
 
 $cnt=0;
 //echo 'kch'.$cnt ;

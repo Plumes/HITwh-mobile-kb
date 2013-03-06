@@ -21,13 +21,7 @@ $ctime = array("08:00~09:45","10:05~11:50","14:00~15:45","16:05~17:50","18:20~19
 
 
 //echo $uid." ".$dayno." ".$weekno;
-$con = mysql_connect("localhost","root","123456qwe");
-if (!$con)
-{
-    die('Could not connect: ' . mysql_error());
-}
-mysql_select_db("mkb",$con);
-mysql_query("SET NAMES 'utf8'");
+require("consql.php");
 $sql ="SELECT cname,teacher,room,corder,sweek,eweek FROM `stuinfo`, `cinfo` 
 	WHERE stuinfo.kch=cinfo.kch and stuinfo.kxh=cinfo.kxh 
 	AND uid = \"$uid\" AND xq = $dayno 

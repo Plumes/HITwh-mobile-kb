@@ -9,14 +9,16 @@ if ($_SESSION['uid'] !="")
 
 if ($_POST['uid'] !="" && $_POST['pwd']!="")
 {
-	$con = mysql_connect("localhost","root","123456qwe");
+/*	$con = mysql_connect("localhost","root","123456qwe");
 	if (!$con)
 	{
 	    die('Could not connect: ' . mysql_error());
 	}
-	$uid = $_POST['uid'];
 	mysql_select_db("mkb",$con);
-	mysql_query("SET NAMES 'utf8'");
+	mysql_query("SET NAMES 'utf8'");*/
+	require("consql.php");
+	$uid = $_POST['uid'];
+	
 	$sql = "SELECT  `pwd` FROM userinfo WHERE uid=\"$uid\"";
 
 	$result = mysql_query($sql);

@@ -4,13 +4,7 @@
 	{
 		$uid = $_POST['uid'];
 		$pwd = $_POST['pwd'];
-		$con = mysql_connect("localhost","root","123456qwe");
-		if (!$con)
-		{
-		    die('Could not connect: ' . mysql_error());
-		}
-		mysql_select_db("mkb",$con);
-		mysql_query("SET NAMES 'utf8'");
+		require("consql.php");
 		$sql ="INSERT INTO `userinfo`(`uid`, `pwd`) VALUES (\"$uid\",\"$pwd\")";
 		//echo $sql;
 		$result = mysql_query($sql);
