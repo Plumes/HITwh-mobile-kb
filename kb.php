@@ -18,10 +18,12 @@
 	$bj = $_GET['bj'];
 	if ($bj !="")
 	{
+		$dayno = date("w");
+		$weekno = date("W")-8;
 		echo "<form action='kbcx.php' method='get'>\n";
 		echo "<input type='hidden' name='bj' value=$bj />";
-		echo "<input type='hidden' name='dayno' value='1' />";
-		echo "<input type='hidden' name='weekno' value='12' />";
+		echo "<input type='hidden' name='dayno' value=$dayno />";
+		echo "<input type='hidden' name='weekno' value=$weekno />";
 		echo "<input type='submit' value='查看今天的课表' class='rbtn' /></form>";
 
 		echo "<p class='ctrtext'>OR</p>";
