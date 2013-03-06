@@ -36,11 +36,15 @@ input,textarea,select,option{font-size:100%;}
 	margin-bottom: 10px;
 	width: 200px;
 }
+.getinfo .cinfo {
+	width:45%;
+	margin-right: 3%;
+}
 
 .getinfo .bbtn{
 
 	font-size:20px;
-
+	margin-left: auto;
 	margin-top:8px;
 	padding-top: 8px;
 	padding-bottom: 8px;
@@ -54,6 +58,7 @@ input,textarea,select,option{font-size:100%;}
 .getinfo .rbtn{
 	font-size:20px;
 	margin-top:8px;
+	margin-left: 0px auto;
 	padding-top: 8px;
 	padding-bottom: 8px;
 	width:200px;
@@ -69,15 +74,16 @@ input,textarea,select,option{font-size:100%;}
 	margin:0px auto;   
 	padding-top: 12px;
 	padding-left: 6px;
+	padding-bottom: 12px;
 	width: 90%;
-	height: 60px;
+	min-height: 60px;
 	overflow: hidden;
 	margin-bottom: 10px;
 	border-radius: 3px;
 	background: #eee;
 }
 .classlist li .cname {
-	line-height: 0px;
+	line-height: 20px;
 	padding-top: 0px;
 	font-size: 16px;
 }
@@ -125,4 +131,17 @@ t{
  	right:5%;
 	font-size: 15px;
 	color: #555;
+}
+.demo_line{
+    height: 1px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.demo_line span{
+    position: relative;
+    top: -12px;
+    background: #eee;
+    padding: 0 20px;
 }
