@@ -61,13 +61,14 @@ mysql_close($con);
 <?php
 echo "<form action='addlist.php' method='post'><a class='ctrtext'>";
 echo "共<t> ".$row['cnt']." </t>men课</a>";
-echo "<div id='field'><br /><input type='text' class='cinfo' name='kch0' placeholder='kch？' />";
-echo "<input type='text' class='cinfo' name='kxh0' placeholder='kxh？' /></div>";
+echo "<div id='field'><br /><input type='text' class='cinfo' name='kch0' placeholder='课程号' />";
+echo "<input type='text' class='cinfo' name='kxh0' placeholder='课序号' /></div>";
 //echo '<form><input type="button" value="continue" class="rbtn" onClick="AddElement(\'text\')'' />';
 //echo "<input type='button' value='确定' class='bbtn' /></form>";
 ?>
-<input type="button" value="continue" class="rbtn" onClick="AddElement( 'text' )" />
-<input type="submit"  value="确定" class="bbtn" /></form>
+<input type="button" value="再添加一门课" class="rbtn" onClick="AddElement( 'text' )" />
+<input type="submit"  value="确定" class="bbtn" />
+<input type="button"  value="取消" class="bkbtn" onclick="goto('query.php')" /></form>
 </div>
  <script>
  var index = 1;
@@ -83,11 +84,18 @@ newkxh.name="kxh".concat(index);
 
 newkxh.setAttribute("class","cinfo");
 newkch.setAttribute("class","cinfo");
+newkxh.setAttribute("placeholder","课序号");
+newkch.setAttribute("placeholder","课程号");
 TemO.appendChild(newkch); 
 TemO.appendChild(newkxh); 
 var newline= document.createElement("br"); 
 TemO.appendChild(newline); 
 index++;
+}
+function goto(url)
+{
+	//alert(url);
+	location.href=url;
 }
 </script>
 </body>

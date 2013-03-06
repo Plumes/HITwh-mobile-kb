@@ -22,7 +22,12 @@ if ($_SESSION['uid'] =="")
 	 
 </head>
 <body>
-	<div><ul class='weektitle'>哈工大威海移动课表</ul></div>
+	<?php
+		echo "<ul class='weektitle'>\n";
+		echo "<li>第 $weekno 周</li>";
+		echo "<li><a class='dtright' href='addlist.php'>增删课程</a></li>";
+		echo "\n</ul>";
+	?>
 <div class="getinfo"><form action='result.php' method='get'>
 	<input type='hidden' name='dayno' value="<?php echo $dayno; ?>"/>
 	<input type='hidden' name='weekno' value="<?php echo $weekno; ?>" />

@@ -51,12 +51,19 @@ if ($_POST['uid'] !="" && $_POST['pwd']!="")
 <div class="getinfo">
 <?php
 	//date_default_timezone_set('Asia/Shanghai');
-	echo "<form action= 'login.php' method='post'>班号:<br />"
-		."<input type='text' name='uid' placeholder='id' /><br>"
-		."<input type='password' name='pwd' placeholder='password' /><br>";
-	echo "<input type='submit' value='确定' class='bbtn' /></form>";
+	echo "<form action= 'login.php' method='post'>登陆<br />"
+		."<input type='text' name='uid' placeholder='帐号' /><br>"
+		."<input type='password' name='pwd' placeholder='密码' /><br>";
+	echo "<input type='submit' value='登陆' class='bbtn' />";
+	echo "<input type='button' onclick='goto() ' value='注册' class='rbtn' /></form>";
 	
 ?>
 </div>
 </body>
+<script>
+function goto()
+{
+	location.href = "reg.php";
+}
+</script>
 </html>

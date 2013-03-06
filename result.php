@@ -24,7 +24,7 @@ $ctime = array("08:00~09:45","10:05~11:50","14:00~15:45","16:05~17:50","18:20~19
 require("consql.php");
 $sql ="SELECT cname,teacher,room,corder,sweek,eweek FROM `stuinfo`, `cinfo` 
 	WHERE stuinfo.kch=cinfo.kch and stuinfo.kxh=cinfo.kxh 
-	AND uid = \"$uid\" AND xq = $dayno 
+	AND uid = '$uid' AND xq = $dayno 
 	and sweek<=$weekno and eweek>=$weekno";
 //echo $sql;
 $result = mysql_query($sql);
@@ -62,7 +62,8 @@ usort($arr,"mycmp");
 <body>
 <?php
 	echo "<ul class='weektitle'>\n";
-	echo "第 ".$weekno." 周";
+	echo "<li>第 $weekno 周</li>";
+	echo "<li><a class='dtright' href='addlist.php'>增删课程</a></li>";
 	echo "\n</ul>";
 	echo "<div class='daytitle'>\n";
 	echo "<a class='dtleft'>";

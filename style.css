@@ -37,7 +37,7 @@ input,textarea,select,option{font-size:100%;}
 	width: 200px;
 }
 .getinfo .cinfo {
-	width:45%;
+	width:44%;
 	margin-right: 3%;
 }
 
@@ -49,7 +49,20 @@ input,textarea,select,option{font-size:100%;}
 	padding-top: 8px;
 	padding-bottom: 8px;
 	width:200px;
-	background-color: #0099b9;
+	background-color: #357ae8;
+	color:#fff;
+	border: 4px;
+	border-radius: 3px;
+}
+.getinfo .bkbtn{
+
+	font-size:20px;
+	margin-left: auto;
+	margin-top:8px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	width:200px;
+	background-color: #0d0d0d;
 	color:#fff;
 	border: 4px;
 	border-radius: 3px;
@@ -116,6 +129,17 @@ t{
 	color: #000; 
 	text-shadow: 0px 1px 0px #ddd;
 	background:url(bar.png) repeat-x;
+}
+.weektitle li{
+	display: inline;
+	
+}
+.weektitle li a{
+	text-decoration: none;
+}
+.weektitle li a:hover{
+	text-decoration: none;
+	color: #0099b9;
 }
 .daytitle {
 	margin:0px auto;
