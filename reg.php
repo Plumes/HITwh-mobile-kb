@@ -108,8 +108,8 @@ function sendinfo()
 		  xmlhttp.open("POST","reg.php",true);
 		xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 		xmlhttp.send("uid="+uid+"&pwd="+pwd);
-		alert("注册成功，转入登陆页面");
-		location.href = "login.php";
+		alert("注册成功，先来添加一些课程吧");
+		location.href = "addlist.php";
 	}
 }
 </script>
