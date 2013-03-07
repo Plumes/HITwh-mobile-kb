@@ -179,3 +179,7 @@ t{
     background: #eee;
     padding: 0 20px;
 }
+.hint{
+	font-size: 14px;
+	line-height: 5px;
+}

@@ -61,6 +61,7 @@ mysql_close($con);
 <?php
 echo "<form action='addlist.php' method='post'><a class='ctrtext'>";
 echo "共<t> ".$row['cnt']." </t>门课</a>";
+echo "<br /><a class='hint'>请分别输入要添加课程的课程号与课序号</a>";
 echo "<div id='field'><br /><input type='text' class='cinfo' name='kch0' placeholder='课程号' />";
 echo "<input type='text' class='cinfo' name='kxh0' placeholder='课序号' /></div>";
 //echo '<form><input type="button" value="continue" class="rbtn" onClick="AddElement(\'text\')'' />';
