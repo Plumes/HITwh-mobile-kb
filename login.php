@@ -31,6 +31,10 @@ if ($_POST['uid'] !="" && $_POST['pwd']!="")
 		$url="query.php";
 		header("Location: $url");
 	}
+	else
+	{
+		echo "<script>alert('用户名或密码错误！');</script>";
+	}
 	mysql_close($con);
 }
 
