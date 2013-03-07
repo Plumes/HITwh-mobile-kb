@@ -10,7 +10,7 @@ input,textarea,select,option{font-size:100%;}
 }
 .getinfo {
 	width: 300px;
-	max-height: 500px;
+	/*max-height: 500px;*/
 	margin-left:auto;
 	margin-right:auto;
 	margin-bottom: auto;

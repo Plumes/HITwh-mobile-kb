@@ -34,7 +34,7 @@ $result = mysql_query($sql);
 $cnt=0;
 $cnt = mysql_num_rows($result);
 mysql_close($con);
-
+$arr=array();
 for ($i=0; $i<$cnt;$i++)
 {
 	$row = mysql_fetch_array($result);

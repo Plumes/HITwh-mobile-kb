@@ -1,20 +1,17 @@
-<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
-<html>
-<head>
-    <title>哈工大威海课表查询</title>
-    <link rel="stylesheet" href="style.css" type="text/css"/>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-</head>
-<body>
-
 <?php
 date_default_timezone_set('Asia/Shanghai');  
 $dayname = array("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday");
 $ctime = array("08:00~09:45","10:05~11:50","14:00~15:45","16:05~17:50","18:20~19:30");
 $bj = $_GET['bj'];
 $bj = substr($bj,0,5)."01";
-$dayno =0;
-$weekno =0;
+$dayno= (int)$_GET['dayno'];
+$weekno= (int)$_GET['weekno'];
+if ($_GET['dayno'] =="" || $_GET['weekno']=="")
+{
+    $url="kb.php";
+    //echo "*".$_SESSION['uid'];
+    header("Location: $url");
+}
 $dayno= (int)$_GET['dayno'];
 $weekno= (int)$_GET['weekno'];
 require("consql.php");
@@ -24,7 +21,18 @@ $sql = "SELECT cname,teacher,room,corder,sweek,eweek FROM kb "
 
 $result = mysql_query($sql);
 mysql_close($con);
+?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+<head>
+    <title>哈工大威海课表查询</title>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<?php
 $index = 1;
+
 echo "<ul class='weektitle'>\n";
 echo "第 ".$weekno." 周";
 echo "\n</ul>";
@@ -101,6 +109,7 @@ echo "<a class='ft'>现在是: ". date('Y-m-d H:i') ."</a>\n";
 <script>
 var dno = <?php echo $dayno; ?>;
 var wno = <?php echo $weekno; ?>;
+var bj=<?php echo $bj; ?>;
 function prev()
 {
     dno = dno % 7;
@@ -110,7 +119,7 @@ function prev()
         dno =dno+7;
         wno = wno -1;
     }
-    location.href = "result.php?weekno="+String(wno)+"&dayno="+String(dno);
+    location.href = "kbcx.php?weekno="+String(wno)+"&dayno="+String(dno)+"&bj="+String(bj);
 }
 function next()
 {
@@ -121,7 +130,7 @@ function next()
         
         wno = wno +1;
     }
-    location.href = "result.php?weekno="+String(wno)+"&dayno="+String(dno);
+    location.href = "kbcx.php?weekno="+String(wno)+"&dayno="+String(dno)+"&bj="+String(bj);
 }
 </script>
 </html>
